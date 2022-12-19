@@ -1,0 +1,82 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"); */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+/* LAYUOT */
+.contenedor {
+  display: grid;
+  height: 100 vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
+  grid-template-areas:
+    "nav"
+    "menu"
+    "main"
+    "footer";
+}
+nav {
+  grid-area: nav;
+  background-color: rgb(7, 75, 98);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+nav ul{
+  display: none;
+  list-style-type: none;
+}
+main {
+  grid-area: main;
+  background-color: white;
+}
+aside {
+  grid-area: menu;
+  background-color: gray;
+}
+footer {
+  grid-area: footer;
+  background-color: rgb(7, 75, 98);
+  color: white;
+}
+.icon {
+  height: 24px;
+  width: 24px;
+}
+main .pages {
+  display: flex;
+  justify-content: center;
+}
+main .gallery_auto {
+  overflow-y: scroll;
+  height: 65vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media all and (min-width: 576px) {
+  .contenedor{
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas: "nav menu" "nav main" "footer main";
+  }
+  main .gallery_auto{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav .nav_icono{
+    display: none;
+  } 
+  nav .nav_secciones{
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  nav {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+}
